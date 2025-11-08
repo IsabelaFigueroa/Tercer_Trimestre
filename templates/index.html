@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulario</title>
+
+    <!-- Enlace al archivo CSS -->
+   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+    <!-- Título -->
+    <h1>Formulario</h1>
+
+    <!-- Formulario -->
+    <form id="formulario">
+        <label>Nombre:</label>
+        <input type="text" name="nombre" required>
+
+        <label>Apellido:</label>
+        <input type="text" name="apellido">
+
+        <label>Dirección:</label>
+        <input type="text" name="direccion">
+
+        <label>Teléfono:</label>
+        <input type="text" name="telefono">
+
+        <label>Correo:</label>
+        <input type="email" name="correo" required>
+
+        <label>Mensaje:</label>
+        <textarea name="mensaje"></textarea>
+
+        <button type="submit">Enviar</button>
+    </form>
+
+    <!-- Script para enviar los datos sin recargar la página -->
+    <script>
+        document.getElementById('formulario').addEventListener('submit', async (event) => {
+            event.preventDefault(); // Evita que la página se recargue
+
+            // Tomar los datos del formulario
+            const datos = Object.fromEntries(new FormData(event.target).entries());
+
+            // Enviar los datos al servidor Flask
+            const respuesta = await fetch('/guardar', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(datos)
+            });
+
+            // Recibir respuesta del servidor
+            const resultado = await respuesta.json();
+
+            // Mostrar mensaje
+            alert(resultado.mensaje || resultado.error);
+        });
+    </script>
+
+</body>
+</html>

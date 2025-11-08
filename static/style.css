@@ -1,0 +1,84 @@
+/* ====== ESTILOS GENERALES ====== */
+body {
+    background-color: #ffe4ec; /* Fondo rosado claro */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* ====== TÍTULO ====== */
+h1 {
+    color: #d63384; /* Rosado fuerte */
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 25px;
+}
+
+/* ====== FORMULARIO ====== */
+form {
+    background-color: #ffffff;
+    padding: 25px 35px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    width: 100%;
+    max-width: 380px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ====== ETIQUETAS Y CAMPOS ====== */
+label {
+    font-weight: bold;
+    color: #444;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+input, textarea {
+    border: 1px solid #d8b5c3;
+    border-radius: 8px;
+    padding: 8px;
+    font-size: 14px;
+    outline: none;
+    transition: all 0.2s ease;
+}
+
+input:focus, textarea:focus {
+    border-color: #ff7fa8;
+    box-shadow: 0 0 5px rgba(255, 105, 180, 0.4);
+}
+
+/* ====== BOTÓN ====== */
+button {
+    background-color: #ff6fa2;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    margin-top: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 15px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #ff4f8a;
+}
+
+/* ====== RESPONSIVO ====== */
+@media (max-width: 480px) {
+    form {
+        width: 85%;
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+}
+
