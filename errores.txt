@@ -1,3 +1,4 @@
+ERRORES
 Error: ModuleNotFoundError, ImportError
 Causa: Falta instalar el conector específico
 Solución:
