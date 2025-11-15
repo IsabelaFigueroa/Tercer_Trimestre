@@ -1,0 +1,8 @@
+Error: ModuleNotFoundError, ImportError
+Causa: Falta instalar el conector específico
+Solución:
+bash
+pip install psycopg2-binary  # PostgreSQL
+
+Error: el bucle que se crea cuando se sube al repositorio el entorno virtual
+Solución: crear un ".gitignore" para que oculte el entorno virtual y no cree el bucle
